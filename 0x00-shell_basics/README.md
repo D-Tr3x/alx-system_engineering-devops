@@ -7,3 +7,4 @@ Welcome to my_first_directory
 Betty in my first directory
 Betty in my first directory
 Bye bye Betty
+Bye bye My first directory
