@@ -7,3 +7,4 @@ Execute
 Multiple permissions
 Everybody can!
 James Bond
+John Doe
