@@ -8,3 +8,4 @@ Multiple permissions
 Everybody can!
 James Bond
 John Doe
+Look in the mirror
