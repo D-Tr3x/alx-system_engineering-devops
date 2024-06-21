@@ -7,3 +7,4 @@ Global variables
 Local variables
 Local Variable
 Global variable
+Every addition to true knowledge is an addition to human power
