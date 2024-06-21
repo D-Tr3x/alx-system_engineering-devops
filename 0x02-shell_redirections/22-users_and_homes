@@ -1,0 +1,3 @@
+#!/bin/bash
+awk -F /etc/passwd | sort
+cat /etc/passwd | sort
