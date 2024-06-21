@@ -9,3 +9,4 @@ Local Variable
 Global variable
 Every addition to true knowledge is an addition to human power
  Love is anterior to life, posterior to death, initial of creation, and the exponent of breath
+Divide and rule
