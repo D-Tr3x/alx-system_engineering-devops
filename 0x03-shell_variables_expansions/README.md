@@ -14,3 +14,4 @@ There are 10 types of people in the world -- Those who understand binary, and th
 Combinations
 Floats
 Decimal to Hexadecimal
+Everyone is a proponent of strong encryption
