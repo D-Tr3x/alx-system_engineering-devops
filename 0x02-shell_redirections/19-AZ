@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e "Replace all characters A and c from input to Z and e." | tr 'Ac' 'Ze'
+echo -e "We can program your personal and business facebook pages to automatically Post Daily interesting comments and pictures for you. If youre too busy to Post to your Facebook, we can make your pages look alive with great information or any topic you request. Step 1. You tell us the topic and type of information you would like post to your page. Step 2: We program your Facebook page to post the relevant content. Step 3: Enjoy having an active Facebook page with valuable content for all your followers. All your followers will know youre still in business, growing and will always remember about you. Here is a gift. try it for 7 days" | tr 'Ac' 'Ze'
