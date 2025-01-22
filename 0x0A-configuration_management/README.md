@@ -6,3 +6,4 @@ This project focuses on automating the configuration management of systems using
 ## Tasks:
 
 0. Create a file1. Install a package
+2. Execute a command
