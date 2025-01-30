@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Configure nginx such that `/redirect_me` redirects as "301 Moved Permanently"
+# Configures Nginx server to have a custom 404 page that contains
+#+ the string `Ceci n'est pas une page`
 
 apt-get update
 apt-get install -y nginx
@@ -12,10 +13,10 @@ server {
     index index.html index.htm index.nginx-debian.html;
 
     location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        return 404;
     }
 }
 EOF
 
 nginx -t
-systemctl restart nginx
+service nginx restart
