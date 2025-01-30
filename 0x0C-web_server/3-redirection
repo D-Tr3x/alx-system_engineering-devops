@@ -17,5 +17,4 @@ server {
 }
 EOF
 
-nginx -t
-systemctl restart nginx
+service nginx restart

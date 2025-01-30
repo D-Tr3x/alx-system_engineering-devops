@@ -8,3 +8,4 @@ In this project I learned some basic design, development and deployment of a web
 1. Install nginx web server
 2. Setup a domain name
 3. Redirection
+4. Not found page 404
