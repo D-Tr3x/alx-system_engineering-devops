@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script installs nginx on ubuntu
+#+    Nginx should listen on port 80
+#+    At its root when queried, it must return a page with "Hello World!"
+
+apt-get update
+apt-get install -y nginx
+
+echo "Hello World!" > /var/www/html/index.html
+
+cat << EOF > /etc/nginx/sites-available/default
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    index index.html index.htm;
+}
+EOF
+
+service nginx restart
