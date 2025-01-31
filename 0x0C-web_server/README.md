@@ -9,3 +9,4 @@ In this project I learned some basic design, development and deployment of a web
 2. Setup a domain name
 3. Redirection
 4. Not found page 404
+5. Install Nginx web server (w/ Puppet)
