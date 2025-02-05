@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Run Apache on alx/265-0 conatiner, and return a page with "Hello ALX"
+echo "ServerName" localhost >> /etc/apache2.conf
+service apache2 start
