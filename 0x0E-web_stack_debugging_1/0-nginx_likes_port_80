@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Configure Nginx to run and listen on port 80
+
+if ! command -v nginx > /dev/null 2>&1; then
+    apt-get update -y && apt-get install -y nginx > /dev/null 2>&1
+fi
+
+sed -i 's/listen 80;/listen 80 default_server;/' /etc/nginx/sites-available/default
+sed -i 's/listen \[::\]:80;/listen \[::\]:80 default_server;/' /etc/nginx/sites-available/default
+
+systemctl restart nginx
+
+ufw allow 80/tcp > dev/null 2>&1 || true
