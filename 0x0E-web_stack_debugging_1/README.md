@@ -11,3 +11,4 @@ The second in the Web stack debugging series. In this project I was tasked with 
 
 ## Tasks:
 - 0. Nginx likes port 80
+- 1. Make it sweet and short
