@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy on `lb-01` server:
+#+   It should send traffic to `web-01` and `web-02`
+#+   It should use `roundrobin` algorithm for distribution
+#+   It should enable management through init script
+
+apt-get update
+apt-get install -y --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.6
+
+apt-get update
+apt-get install -y haproxy
+
+sed -i 's/^ENABLED=0/ENABLED=1/' /etc/default/haproxy
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
+
+cat <<EOF > /etc/haproxy/haproxy.cfg
+global
+    log 127.0.0.1 local0 notice
+    maxconn 2000
+    user haproxy
+    group haproxy
+
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option  redispatch
+    timeout connect 5000
+    timeout client 10000
+    timeout server 10000
+
+frontend alx-frontend
+    bind *:80
+    default_backend alx-backend
+
+backend alx-backend
+    balance roundrobin
+    server 648410-web-01 18.235.234.179:80 check
+    server 648410-web-02 54.160.94.251:80 check
+EOF
+
+service haproxy restart
