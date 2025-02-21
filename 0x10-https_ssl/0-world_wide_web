@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# This script displays information about subdomains
+
+dns_info() {
+    subdomain=$1
+    domain=$2
+    line=$(dig "$subdomain.$domain" | awk '/ANSWER SECTION:/ {getline; print}')
+    record_type=$(echo $line | awk '{print $4}')
+    dest=$(echo $line | awk '{print $5}')
+    echo "The subdomain $subdomain is a $record_type record and points to $dest"
+}
+
+
+if [ $# -lt 1 ]
+then
+    echo "Usage: $0 domain [subdomain]"
+    exit 1
+fi
+
+
+domain=$1
+
+if [ $# -eq 2 ]
+then
+    dns_info $2 $domain
+else
+    for sub in www lb-01 web-01 web-02
+    do
+        dns_info $sub $domain
+    done
+fi
