@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module defines function to query subscribers on a given subreddit"""
+"""Module defines function to print titles of hot posts on a given subreddit"""
 import requests
 
 
