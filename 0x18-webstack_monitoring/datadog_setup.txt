@@ -1,15 +1,18 @@
 ## Objectives:
-- To monitor `web-01` server using [Datadog](https://app.datadoghq.com/):
-- To install `Datadog` agent on `web-01`
-- To create an `application key`
-- To ensure `web-01` server becomes visible in Datadog under the hist name `648410-web-01`
+- To monitor `web-01` server using [Datadog](https://app.datadoghq.com/).
+- To install `Datadog` agent on `web-01`.
+- To create an `application key`.
+- To ensure `web-01` server becomes visible in Datadog under the hist name `648410-web-01`.
 
 
 ## Steps taken:
-- Sign up on [Datadog](https://app.datadoghq.com/) using the US1 region
-- On the terminal, navigate to `web-01` server the install `datadog` using the `API key`:
-  `DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=<MY_API_KEY> DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
-` (substitute `<MY_API_KEY>` with the correct `API key`)
+### 1. Sign Up & Install Datadog Agent
+- Signed up on [Datadog](https://app.datadoghq.com/) using the **US1 region**.
+- On the terminal, navigated to `web-01`and installed Datadog using the **API key**:
+  ```bash
+  DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=<MY_API_KEY> DD_SITE="datadoghq.com" \
+  bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"
+  (substitute `<MY_API_KEY>` with the correct `API key`)
 - Confirm that the agent is running `sudo systemctl status datadog-agent`
   if not, start `sudo systemctl start datadog-agent`
 - Ensure the following lines are enabled in `/etc/datadog-agent/datadog.yaml`:
@@ -20,4 +23,5 @@
      `enabled: "true"`
 - Restart the agent `sudo systemctl restart datadog-agent`
 - Confirm connectivity to Datadog:
-  "bash `telnet intake.datadoghq.com 443` or `nc -zv intake.datadoghq.com 443`
+  ```bash
+  telnet intake.datadoghq.com 443` or `nc -zv intake.datadoghq.com 443
