@@ -15,3 +15,7 @@ For this project `Puppet` was used to adjust the server's configuration and Apac
   - Using Puppet manifest to automate the configuration change.
   - Restarting Nginx to apply changes
   - Re-verifying the fix by running ApacheBench (`ab -c 100 -n 2000 localhost/`) to ensure all requests succedd with `0` failures.
+- **1. User limit**
+  This task involves:
+  - Changing the OS configuration so that `holberton` user can log in and open files without error messages.
+  - Using a Puppet manifest to adjust the file descriptor limits for the holberton user in `/etc/security/limits.conf`.
