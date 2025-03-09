@@ -8,8 +8,8 @@ exec { 'fix-for-nginx':
 } ->
 
 exec { 'nginx-restart':
-  command => 'service nginx restart',
-  path => ['/etc/init.d'],
+  command     => 'service nginx restart',
+  path        => ['/etc/init.d'],
   refreshonly => true
 }
 
